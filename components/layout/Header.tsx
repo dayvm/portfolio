@@ -15,6 +15,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Image from "next/image";
+import { ThemeToggle } from "../theme-toggle";
 
 // Criamos um componente de link reutilizável para o Menu de Navegação
 const ListItem = ({ href, title }: { href: string; title: string }) => {
@@ -53,10 +54,11 @@ export function Header() {
         <div className="flex w-3/5 lg:w-1/5 justify-start pl-8">
           <Link href="/">
           <Image
-          src="/DM rect.png"
+          src="/dm rect2.png"
           alt="logo"
           width={60}
           height={60}
+          className="dark:invert"
           
           ></Image>
           </Link>
@@ -66,7 +68,8 @@ export function Header() {
           - w-4/5: (ocupa 4/5 = 80% do resto)
           - flex justify-center: (centraliza seus filhos)
         */}
-        <div className="flex w-2/5 lg:w-4/5 justify-center">
+        <div className="flex w-2/5 lg:w-4/5 justify-end pr-8">
+        <ThemeToggle/>
         </div>
       </div>
 

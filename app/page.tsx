@@ -30,7 +30,7 @@ export default function Home() {
         <Avatar className="h-32 w-32">
           {/* Troque pela sua foto */}
           <AvatarImage src="https://avatars.githubusercontent.com/u/83921667?v=4" alt="@dayvson" />
-          <AvatarFallback>DM</AvatarFallback>
+          <AvatarFallback>profile image</AvatarFallback>
         </Avatar>
 
         <h1 className="mt-6 text-3xl font-bold">
