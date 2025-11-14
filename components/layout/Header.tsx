@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import Image from "next/image";
 
 // Criamos um componente de link reutilizável para o Menu de Navegação
 const ListItem = ({ href, title }: { href: string; title: string }) => {
@@ -49,43 +50,23 @@ export function Header() {
           - flex justify-start: (coloca seus filhos à esquerda)
           - pl-8: (um padding à esquerda para não colar na borda)
         */}
-        <div className="flex w-1/5 justify-start pl-8">
-          <Avatar>
-            {/* Troque "DM" pelas suas iniciais e a imagem pelo seu avatar.
-              O AvatarFallback é o que aparece enquanto a imagem carrega.
-            */}
-            <AvatarImage src="https://github.com/shadcn.png" alt="@dayvson" />
-            <AvatarFallback>DM</AvatarFallback>
-          </Avatar>
+        <div className="flex w-3/5 lg:w-1/5 justify-start pl-8">
+          <Link href="/">
+          <Image
+          src="/DM rect.png"
+          alt="logo"
+          width={60}
+          height={60}
+          
+          ></Image>
+          </Link>
         </div>
 
         {/* Esta é a sua "div right":
           - w-4/5: (ocupa 4/5 = 80% do resto)
           - flex justify-center: (centraliza seus filhos)
         */}
-        <div className="flex w-4/5 justify-center">
-          <NavigationMenu>
-            <NavigationMenuList>
-              
-              {/* Aqui você adiciona os links para suas páginas */}
-              <NavigationMenuItem>
-                <ListItem href="/" title="Home" />
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <ListItem href="/sobre" title="Sobre" />
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <ListItem href="/projetos" title="Projetos" />
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <ListItem href="/experiencia-academica" title="Acadêmico" />
-              </NavigationMenuItem>
-
-            </NavigationMenuList>
-          </NavigationMenu>
+        <div className="flex w-2/5 lg:w-4/5 justify-center">
         </div>
       </div>
 
