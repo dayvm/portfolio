@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Dayvson Moura",
-  description: "Dayvson Moura Soluções.",
+  description: "Website do Portfólio de Dayvson Moura",
 };
 
 // 2. Crie o 'export const viewport' separado aqui
