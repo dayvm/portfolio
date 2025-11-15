@@ -1,5 +1,5 @@
 // components/layout/Header.tsx
-
+"use client"
 import {
   Avatar,
   AvatarFallback,
@@ -16,24 +16,25 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggle } from "../theme-toggle";
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
-// Criamos um componente de link reutilizável para o Menu de Navegação
-const ListItem = ({ href, title }: { href: string; title: string }) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className={navigationMenuTriggerStyle()} // Usa o estilo do Shadcn
-        >
-          {title}
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  );
-};
 
 export function Header() {
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const activeTheme = theme === "system" ? resolvedTheme : theme
+
+  const logoSrc = activeTheme === "dark"
+    ? "/dm-logo-in-dark-mode.png"
+    : "/dm-logo-in-white-mode.png"
+
+  if (!mounted) return null
   return (
     // Usamos a tag <header> por semântica.
     // O <nav> envolve tudo para acessibilidade.
@@ -45,7 +46,7 @@ export function Header() {
         - py-4: (um padding vertical para dar espaço)
       */}
       <div className="flex w-full items-center py-4">
-        
+
         {/* Esta é a sua "div left":
           - w-1/5: (ocupa 1/5 = 20% da mãe)
           - flex justify-start: (coloca seus filhos à esquerda)
@@ -53,14 +54,12 @@ export function Header() {
         */}
         <div className="flex w-3/5 lg:w-1/5 justify-start pl-8">
           <Link href="/">
-          <Image
-          src="/dm rect2.png"
-          alt="logo"
-          width={60}
-          height={60}
-          className="dark:invert"
-          
-          ></Image>
+            <Image
+              src={logoSrc}
+              alt="logo"
+              width={60}
+              height={60}
+            />
           </Link>
         </div>
 
@@ -69,7 +68,7 @@ export function Header() {
           - flex justify-center: (centraliza seus filhos)
         */}
         <div className="flex w-2/5 lg:w-4/5 justify-end pr-8">
-        <ThemeToggle/>
+          <ThemeToggle />
         </div>
       </div>
 
