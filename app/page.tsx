@@ -78,7 +78,10 @@ export default function Home() {
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
+                      <Link
+                      href={`/projetos/${project.slug}`}>
                       <img src={project.imageUrl} alt={project.title}/>
+                      </Link>
                     </CardContent>
                   </Card>
                 </div>

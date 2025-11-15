@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
         slug: "geradocs",
         title: "Geradocs",
         description: "Software de preenchimento fácil de documentos",
-        longDescription: "Criou conjuntamente a solução GeraDocs, que resultou em uma diminuição de aproximadamente 90% no tempo de preenchimento de documentos para os colaboradores, economizando 45 minutos a cada 50 minutos.",
+        longDescription: "A solução GeraDocs resultou em uma diminuição de aproximadamente 90% no tempo de preenchimento de documentos para os colaboradores da PERPART, economizando 45 minutos a cada 50 minutos.",
         imageUrl:"/geradocs.jpg",
         technologies:["Arquitetura MVC", "ORM Prisma", "MySQL", "Vitest", "Swagger"]
     },

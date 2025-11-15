@@ -6,26 +6,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge"; // Componente para tags de tecnologia
+import { PROJECTS, type Project } from "@/lib/projects";
 
 interface ProjectPageProps {
-    params: {
-        slug: string; // O slug do projeto (ex: "geradocs", "meu-app")
-    };
+    params: Promise<{
+        slug: string;
+    }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-    const { slug } = params; // Extrai o slug da URL
+export default async function ProjectPage({ params }: ProjectPageProps) {
 
+    // ⬇️ Necessário no Next.js atual
+    const { slug } = await params;
 
-    const projectData = {
-        title: "Geradox", // Ex: "Geradocs"
-        description: `Este é um projeto de exemplo para o ${slug}. Uma descrição mais longa do projeto, detalhando seus objetivos, funcionalidades principais, desafios enfrentados e soluções implementadas. O foco foi em criar uma interface intuitiva e uma experiência de usuário fluida, utilizando as tecnologias mais recentes do mercado para garantir escalabilidade e manutenção.`,
-        imageUrl: "https://via.placeholder.com/600x400?text=Imagem+do+Projeto", // Substitua pela imagem real
-        githubUrl: `https://github.com/dayvson-moura/${slug}`, // Link para o GitHub
-        demoUrl: `https://demo.${slug}.com`, // Link para a demo
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "Node.js", "Express", "PostgreSQL"],
-    };
+    console.log("Slug recebido:", slug);
 
+    const projectData = PROJECTS.find(p => p.slug === slug);
+
+    // 1️⃣ Se não encontrar o projeto, retorna página 404 personalizada
+    if (!projectData) {
+        return (
+            <main className="mx-auto max-w-3xl px-4 py-8">
+                <h1 className="text-3xl font-bold">Projeto não encontrado</h1>
+                <p className="mt-4 text-muted-foreground">
+                    O projeto solicitado não existe.
+                </p>
+            </main>
+        );
+    }
+    
     return (
         <main className="mx-auto max-w-3xl px-4 py-8">
             <h1 className="mb-8 text-left text-4xl font-extrabold tracking-tight lg:text-5xl">
@@ -37,7 +46,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
                     <CardContent className="relative flex aspect-video items-center justify-center p-0">
                         <Image
-                            src="/geradocs.jpg"
+                            src={projectData.imageUrl}
                             alt={`Preview do projeto ${projectData.title}`}
                             layout="fill" // Preenche o contêiner
                             objectFit="cover" // Corta se necessário para cobrir
@@ -69,7 +78,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <section className="mb-12">
                 <h2 className="mb-4 text-3xl font-bold">Sobre</h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                    {projectData.description}
+                    {projectData.longDescription}
                 </p>
                 {/* Você pode adicionar mais parágrafos, listas, etc. aqui */}
             </section>
@@ -77,15 +86,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <Separator className="my-8" />
 
             <section>
-        <h2 className="mb-4 text-3xl font-bold">Tecnologias Utilizadas</h2>
-        <div className="flex flex-wrap gap-2">
-          {projectData.technologies.map((tech) => (
-            <Badge key={tech} variant="secondary" className="px-4 py-2 text-md">
-              {tech}
-            </Badge>
-          ))}
-        </div>
-      </section>
+                <h2 className="mb-4 text-3xl font-bold">Tecnologias Utilizadas</h2>
+                <div className="flex flex-wrap gap-2">
+                    {projectData.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="px-4 py-2 text-md">
+                            {tech}
+                        </Badge>
+                    ))}
+                </div>
+            </section>
         </main>
     )
 }
