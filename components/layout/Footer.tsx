@@ -31,7 +31,7 @@ export function Footer() {
                         <Link href="/contato" className="text-muted-foreground transition-colors hover:text-primary">
                             Contato
                         </Link>
-                        <Link href="/sobre" className="text-muted-foreground transition-colors hover:text-primary">
+                        <Link href="/sobre-o-app" className="text-muted-foreground transition-colors hover:text-primary">
                             Sobre o App
                         </Link>
                     </div>
