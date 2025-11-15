@@ -101,7 +101,7 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          
+
         </Carousel>
 
       </section>
@@ -155,7 +155,7 @@ export default function Home() {
         <div className="mt-6 flex items-center justify-center gap-6">
 
           <Link
-            href="mailto:SEU_EMAIL@gmail.com"
+            href="mailto:dayvson.moura.7@gmail.com"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
             <Mail className="h-8 w-8" />
@@ -163,7 +163,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="https://linkedin.com/in/SEU_USUARIO_AQUI"
+            href="https://www.linkedin.com/in/dayvson-moura-pro/"
             target="_blank"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
@@ -172,7 +172,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="https://github.com/SEU_USUARIO_AQUI"
+            href="https://github.com/dayvm"
             target="_blank"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
@@ -191,18 +191,29 @@ export default function Home() {
         </h2>
 
         <p className="max-w-prose text-lg text-muted-foreground">
-          Feito com Next.js 14, Shadcn UI e Tailwind CSS.
+          Feito com Next.js 16 e Tailwind CSS.
           Você pode ver o código-fonte no meu GitHub.
         </p>
 
-        <a
-          href="https://nextjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 text-lg font-semibold"
-        >
-          NEXT.js
-        </a>
+        <div className="mt-6 flex items-center justify-center gap-6">
+          <a
+            href="https://nextjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 text-lg font-semibold"
+          >
+            NEXT.js
+          </a>
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 text-lg font-semibold"
+          >
+            Tailwind CSS
+          </a>
+        </div>
+
       </section>
     </main>
   );
