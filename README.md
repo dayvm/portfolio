@@ -3,7 +3,7 @@
 
 Este é o repositório do meu portfólio pessoal, desenvolvido do zero com Next.js 16, Tailwind CSS v4 e Shadcn UI. O projeto foi focado em uma arquitetura de "App Router", design mobile-first e gerenciamento de dados local.
 
-**[https://dayvson.vercel.app/]** (Adicione o link aqui quando você publicar)
+**[https://dayvson.vercel.app/]**
 <!-- 
 ## 📸 Screenshots
 
@@ -82,7 +82,7 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 1.  Clone o repositório:
     ```bash
-    git clone [https://github.com/dayvm/portfolio](https://github.com/dayvm/portfolio.git)
+    git clone [Repositório do Portfólio](https://github.com/dayvm/portfolio.git)
     ```
 2.  Instale as dependências:
     ```bash
@@ -97,7 +97,8 @@ Para rodar este projeto localmente, siga os passos abaixo:
     ```
 2.  Abra seu navegador e acesse [http://localhost:3000](http://localhost:3000).
 
-🚧 Melhorias Futuras
+## 🚧 Melhorias Futuras
+
 Fixar a altura dos cards na página inicial para evitar variação de tamanho baseada no conteúdo.
 
 Garantir que o Footer fique "colado" no fim da tela (sticky footer) em páginas com pouco conteúdo, como a 404 e a de Projeto Inválido.
