@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     
     return (
         <main className="mx-auto max-w-3xl px-4 py-8">
-            <h1 className="mb-8 text-left text-4xl font-extrabold tracking-tight lg:text-5xl">
+            <h1 className="mb-8 text-left text-3xl font-bold tracking-tight lg:text-5xl">
                 {projectData.title}
             </h1>
 
@@ -76,7 +76,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <Separator className="my-8" />
 
             <section className="mb-12">
-                <h2 className="mb-4 text-3xl font-bold">Sobre</h2>
+                <h2 className="mb-4 text-xl font-bold">Sobre</h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
                     {projectData.longDescription}
                 </p>
@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <Separator className="my-8" />
 
             <section>
-                <h2 className="mb-4 text-3xl font-bold">Tecnologias Utilizadas</h2>
+                <h2 className="mb-4 text-xl font-bold">Tecnologias Utilizadas</h2>
                 <div className="flex flex-wrap gap-2">
                     {projectData.technologies.map((tech) => (
                         <Badge key={tech} variant="secondary" className="px-4 py-2 text-md">

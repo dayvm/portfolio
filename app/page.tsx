@@ -184,37 +184,7 @@ export default function Home() {
 
       </section>
 
-      <section className="flex flex-col items-center py-12 text-center">
-
-        <h2 className="mb-4 text-center text-2xl font-bold">
-          Sobre o App
-        </h2>
-
-        <p className="max-w-prose text-lg text-muted-foreground">
-          Feito com Next.js 16 e Tailwind CSS.
-          Você pode ver o código-fonte no meu GitHub.
-        </p>
-
-        <div className="mt-6 flex items-center justify-center gap-6">
-          <a
-            href="https://nextjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 text-lg font-semibold"
-          >
-            NEXT.js
-          </a>
-          <a
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 text-lg font-semibold"
-          >
-            Tailwind CSS
-          </a>
-        </div>
-
-      </section>
+      
     </main>
   );
 }

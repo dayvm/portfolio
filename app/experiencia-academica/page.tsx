@@ -7,7 +7,7 @@ export default function AcademicExperiencePage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
       {/* Título (como no rascunho) */}
-      <h1 className="mb-4 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
+      <h1 className="mb-4 text-center text-3xl font-bold tracking-tight lg:text-5xl">
         Experiência Acadêmica
       </h1>
 

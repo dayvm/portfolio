@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
       {/* Título da Página (como no seu rascunho) */}
-      <h1 className="mb-8 text-4xl font-extrabold tracking-tight lg:text-5xl">
+      <h1 className="mb-8 text-3xl font-bold tracking-tight lg:text-5xl">
         Projetos
       </h1>
 
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
                 
                 {/* Título: É um link para a página de detalhes */}
                 <Link href={`/projetos/${project.slug}`}>
-                  <CardTitle className="text-2xl transition-colors hover:text-primary">
+                  <CardTitle className="text-xl transition-colors hover:text-primary">
                     {project.title}
                   </CardTitle>
                 </Link>

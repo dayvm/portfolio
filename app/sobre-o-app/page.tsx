@@ -11,7 +11,7 @@ export default function AboutPage() {
     <main className="mx-auto max-w-3xl px-4 py-8">
       {/* SEÇÃO 1: TÍTULO E DESCRIÇÃO */}
       <section className="mb-12">
-        <h1 className="mb-4 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
+        <h1 className="mb-4 text-center text-3xl font-bold tracking-tight lg:text-5xl">
           Sobre este App
         </h1>
         <p className="text-center text-lg text-muted-foreground">
@@ -24,7 +24,7 @@ export default function AboutPage() {
 
       {/* SEÇÃO 2: LINK DO CÓDIGO-FONTE */}
       <section className="mb-12 flex flex-col items-center">
-        <h2 className="mb-4 text-3xl font-bold">Código-Fonte</h2>
+        <h2 className="mb-4 text-xl font-bold">Código-Fonte</h2>
         <p className="mb-4 text-center text-muted-foreground">
           Este projeto é de código aberto. Sinta-se à vontade para explorar.
         </p>
@@ -38,7 +38,7 @@ export default function AboutPage() {
 
       {/* SEÇÃO 3: TECNOLOGIAS UTILIZADAS */}
       <section>
-        <h2 className="mb-6 text-center text-3xl font-bold">
+        <h2 className="mb-6 text-center text-xl font-bold">
           Tecnologias Utilizadas
         </h2>
         
