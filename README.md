@@ -103,9 +103,9 @@ Fixar a altura dos cards na página inicial para evitar variação de tamanho ba
 
 Garantir que o Footer fique "colado" no fim da tela (sticky footer) em páginas com pouco conteúdo, como a 404 e a de Projeto Inválido.
 
-Adicionar um botão de "Voltar" na página de detalhes do projeto.
+Adicionar um botão de "Voltar" na página de detalhes do projeto e talvez em outras páginas.
 
-Melhorar o layout horizontal em telas ultrawide, garantindo que o conteúdo principal não se estique demais.
+Modificar o layout horizontal para telas grandes.
 
 ## 📄 Licença
 
