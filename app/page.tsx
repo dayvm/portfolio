@@ -50,9 +50,9 @@ export default function Home() {
         <h2 className="mb-2 text-center text-2xl font-bold">
           Projetos
         </h2>
-          <p className="mb-6 text-center text-sm text-muted-foreground">
-            Aqui estão alguns projetos por quais ele já passou.
-          </p>
+        <p className="mb-6 text-center text-sm text-muted-foreground">
+          Aqui estão alguns projetos por quais ele já passou.
+        </p>
 
         <Carousel
           className="w-full"
@@ -77,10 +77,13 @@ export default function Home() {
                         {project.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      <Link
-                      href={`/projetos/${project.slug}`}>
-                      <img src={project.imageUrl} alt={project.title}/>
+                    <CardContent className="flex justify-center">
+                      <Link href={`/projetos/${project.slug}`}>
+                        <img
+                          src={project.imageUrl}
+                          alt={project.title}
+                          className="w-85/100 md:w-full mx-auto"
+                        />
                       </Link>
                     </CardContent>
                   </Card>
@@ -88,9 +91,8 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-
+          <CarouselPrevious className="inline-flex left-4 md:-left-12" />
+          <CarouselNext className="inline-flex right-4 md:-right-12" />
 
         </Carousel>
 
