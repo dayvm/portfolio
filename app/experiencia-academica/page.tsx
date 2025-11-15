@@ -30,17 +30,17 @@ export default function AcademicExperiencePage() {
               
               {/* Coluna do Ícone */}
               <div className="mt-1 flex-shrink-0">
-                <IconComponent className="h-8 w-8 text-primary" />
+                <IconComponent className="h-8 w-8 text-primary stroke-1" />
               </div>
 
               {/* Coluna do Conteúdo */}
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold">{exp.title}</h3>
-                <p className="text-md font-medium text-muted-foreground">
+                <h3 className="text-xl ">{exp.title}</h3>
+                <p className="text-md text-muted-foreground">
                   {exp.subtitle}
                 </p>
                 <p className="text-sm text-muted-foreground">{exp.dateRange}</p>
-                <p className="mt-2 text-base">{exp.description}</p>
+                <p className="mt-2 text-muted-foreground ">{exp.description}</p>
               </div>
             </div>
           );
