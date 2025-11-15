@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/avatar";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -21,6 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Briefcase, GraduationCap, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+import { PROJECTS } from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -39,15 +41,18 @@ export default function Home() {
 
         <p className="mt-2 max-w-prose text-center text-lg text-muted-foreground">
           Estudante de tecnologia e desenvolvedor
-          back-end, já passou por vários projetos e
+          back-end. Já passou por vários projetos e
           continua em busca de criar soluções inovadoras.
         </p>
       </section>
 
       <section className="py-12">
-        <h2 className="mb-6 text-center text-2xl font-bold">
+        <h2 className="mb-2 text-center text-2xl font-bold">
           Projetos
         </h2>
+          <p className="mb-6 text-center text-sm text-muted-foreground">
+            Aqui estão alguns projetos por quais ele já passou.
+          </p>
 
         <Carousel
           className="w-full"
@@ -60,21 +65,21 @@ export default function Home() {
           <CarouselContent>
             {/* Array.from... é só um jeito de criar 5 slides de exemplo */}
             {/* Você vai trocar isso por um .map() nos seus projetos reais */}
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index}>
+            {PROJECTS.map((project) => (
+              <CarouselItem key={project.slug}>
                 <div className="p-1">
                   {/* Card: O container de cada projeto */}
                   <Card>
                     <CardHeader>
                       {/* Você vai trocar "Geradocs" pelo nome do seu projeto */}
-                      <CardTitle>Geradocs {index + 1}</CardTitle>
+                      <CardTitle>{project.title}</CardTitle>
                       <CardDescription>
-                        Breve descrição do projeto aqui.
+                        {project.description}
                       </CardDescription>
                     </CardHeader>
-                    {/* Você pode adicionar <CardContent> com uma imagem 
-                      e <CardFooter> com links/botões aqui 
-                    */}
+                    <CardContent>
+                      <img src={project.imageUrl} alt={project.title}/>
+                    </CardContent>
                   </Card>
                 </div>
               </CarouselItem>
@@ -86,9 +91,6 @@ export default function Home() {
 
         </Carousel>
 
-        <p className="mt-4 text-center text-sm text-muted-foreground">
-          Aqui estão alguns projetos por quais ele já passou.
-        </p>
       </section>
 
       <section className="py-12">
