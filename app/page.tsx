@@ -59,7 +59,9 @@ export default function Home() {
 
       <section className="py-12">
         <h2 className="mb-2 text-center text-2xl font-bold">
-          Projetos
+          <Link href="/projetos">
+           Projetos
+          </Link>
         </h2>
         <p className="mb-6 text-center text-sm text-muted-foreground">
           Aqui estão alguns projetos por quais já passei.
