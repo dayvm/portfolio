@@ -1,4 +1,5 @@
 // app/page.tsx
+"use client";
 
 import {
   Avatar,
@@ -23,8 +24,17 @@ import { Button } from "@/components/ui/button";
 import { Briefcase, GraduationCap, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
+import Autoplay from "embla-carousel-autoplay"
+import { useRef } from "react";
+
 
 export default function Home() {
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+    })
+  );
   return (
     <main className="mx-auto max-w-2xl px-4">
 
@@ -61,6 +71,7 @@ export default function Home() {
             align: "start",
             loop: true,
           }}
+          plugins={[autoplayPlugin.current]}
         >
           <CarouselContent>
             {/* Array.from... é só um jeito de criar 5 slides de exemplo */}
@@ -82,7 +93,6 @@ export default function Home() {
                         <img
                           src={project.imageUrl}
                           alt={project.title}
-                          className="w-85/100 md:w-full mx-auto"
                         />
                       </Link>
                     </CardContent>
@@ -91,9 +101,7 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="inline-flex left-4 md:-left-12" />
-          <CarouselNext className="inline-flex right-4 md:-right-12" />
-
+          
         </Carousel>
 
       </section>
