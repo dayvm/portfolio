@@ -7,6 +7,8 @@ export type Project = {
     githubUrl?: string;
     demoUrl?: string;    // O '?' torna opcional
     technologies: string[];
+    type: string;
+    institution?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -16,7 +18,9 @@ export const PROJECTS: Project[] = [
         description: "Software de preenchimento fácil de documentos",
         longDescription: "A solução GeraDocs resultou em uma diminuição de aproximadamente 90% no tempo de preenchimento de documentos para os colaboradores da PERPART, economizando 45 minutos a cada 50 minutos.",
         imageUrl:"/geradocs.jpg",
-        technologies:["Arquitetura MVC", "ORM Prisma", "MySQL", "Vitest", "Swagger"]
+        technologies:["Arquitetura MVC", "ORM Prisma", "MySQL", "Vitest", "Swagger"],
+        type: "Projeto Profissional",
+        institution: "PERPART"
     },
     {
         slug: "salveojona",
@@ -26,6 +30,8 @@ export const PROJECTS: Project[] = [
         imageUrl:"/salveojona.jpg",
         technologies:["React","Vite","CSS3", "JavaScript"],
         githubUrl: "https://github.com/dayvm/forca_game",
-        demoUrl:"https://salveojona.vercel.app/"
+        demoUrl:"https://salveojona.vercel.app/",
+        type:"Projeto Acadêmico",
+        institution:"Universidade Católica de Pernambuco"
     },
 ]

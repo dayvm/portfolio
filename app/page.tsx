@@ -26,6 +26,7 @@ import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import Autoplay from "embla-carousel-autoplay"
 import { useRef } from "react";
+import { ProjectTypeBadge } from "@/components/project-type-badge";
 
 
 export default function Home() {
@@ -51,8 +52,8 @@ export default function Home() {
 
         <p className="mt-2 max-w-prose text-center text-lg text-muted-foreground">
           Estudante de tecnologia e desenvolvedor
-          back-end. Já passou por vários projetos e
-          continua em busca de criar soluções inovadoras.
+          back-end. Já passei por vários projetos e
+          continuo em busca de criar soluções inovadoras.
         </p>
       </section>
 
@@ -61,7 +62,7 @@ export default function Home() {
           Projetos
         </h2>
         <p className="mb-6 text-center text-sm text-muted-foreground">
-          Aqui estão alguns projetos por quais ele já passou.
+          Aqui estão alguns projetos por quais já passei.
         </p>
 
         <Carousel
@@ -80,7 +81,11 @@ export default function Home() {
               <CarouselItem key={project.slug}>
                 <div className="p-1">
                   {/* Card: O container de cada projeto */}
-                  <Card>
+                  <Card key={project.slug} className="relative overflow-hidden">
+                    <ProjectTypeBadge
+                      type={project.type}
+                      className="absolute right-4 top-4"
+                    />
                     <CardHeader>
                       {/* Você vai trocar "Geradocs" pelo nome do seu projeto */}
                       <CardTitle>{project.title}</CardTitle>
@@ -184,7 +189,7 @@ export default function Home() {
 
       </section>
 
-      
+
     </main>
   );
 }

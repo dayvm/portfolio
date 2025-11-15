@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge"; // Componente para tags de tecnologia
 import { PROJECTS, type Project } from "@/lib/projects";
+import { ProjectTypeBadge } from "@/components/project-type-badge";
 
 interface ProjectPageProps {
     params: Promise<{
@@ -34,12 +35,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </main>
         );
     }
-    
+
     return (
         <main className="mx-auto max-w-3xl px-4 py-8">
             <h1 className="mb-8 text-left text-3xl font-bold tracking-tight lg:text-5xl">
                 {projectData.title}
             </h1>
+
 
             <section className="mb-12">
                 <Card className="overflow-hidden">
@@ -54,7 +56,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                         />
                     </CardContent>
                 </Card>
+                <div className="mt-4">  {/* espaçamento vertical */}
+                    <ProjectTypeBadge type={projectData.type} />
 
+                    {projectData.institution && (
+                        <p className="mt-2 text-sm text-gray-300">
+                            Instituição: {projectData.institution}
+                        </p>
+                    )}
+                </div>
                 <div className="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
                     {projectData.githubUrl && (
                         <Button asChild size="lg">
@@ -72,6 +82,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     )}
                 </div>
             </section>
+
 
             <Separator className="my-8" />
 

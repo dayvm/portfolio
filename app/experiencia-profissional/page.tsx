@@ -13,8 +13,7 @@ export default function ProfessionalExperiencePage() {
 
       {/* Parágrafo de introdução (como no rascunho) */}
       <p className="mb-12 text-center text-lg text-muted-foreground">
-        Minha jornada na faculdade, bootcamps e cursos que moldaram
-        minha base como desenvolvedor de software.
+        Minha trajetória em empresas e projetos que fortaleceram minha prática e habilidades como desenvolvedor de software.
       </p>
 
       {/* Container da lista de experiências */}
