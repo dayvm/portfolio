@@ -37,7 +37,9 @@ export function Footer() {
                     </div>
                 </div>
                 <p className="mt-8 text-center text-sm text-muted-foreground">
+                    <Link href="/curiosidade">
                     © 2025 dayvm
+                    </Link>
                 </p>
             </div>
         </footer>
