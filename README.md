@@ -107,6 +107,8 @@ Adicionar um botão de "Voltar" na página de detalhes do projeto e talvez em ou
 
 Modificar o layout horizontal para telas grandes.
 
+Modificar o carousel para exibir em formato de pontinhos embaixo do card e remover o slide automático.
+
 ## 📄 Licença
 
 Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
