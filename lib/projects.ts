@@ -23,6 +23,16 @@ export const PROJECTS: Project[] = [
         institution: "PERPART"
     },
     {
+        slug: "recursoshumanospp",
+        title: "Recursos Humanos Perpart",
+        description: "Software de gerenciamento dos recursos humanos da PERPART.",
+        longDescription: "O software de RH da PERPART vem para resolver o problema de controle de dados dos funcionários da PERPART. Suas informações antes descentralizadas, agora estão acessíveis a poucos cliques, transformando os processos e trazendo eficiência para a empresa.",
+        imageUrl:"/perpart.jfif",
+        technologies:["TypeScript", "ORM Prisma", "MySQL", "Swagger", "Docker"],
+        type: "Projeto Profissional",
+        institution: "PERPART"
+    },
+    {
         slug: "salveojona",
         title: "Salve o Jona",
         description: "Jogo de adivinhar palavras",
@@ -33,5 +43,26 @@ export const PROJECTS: Project[] = [
         demoUrl:"https://salveojona.vercel.app/",
         type:"Projeto Acadêmico",
         institution:"Universidade Católica de Pernambuco"
+    },
+    {
+        slug: "alertaurbano",
+        title: "Alerta Urbano",
+        description: "Plataforma de Zeladoria e Manutenção Urbana",
+        longDescription: "Uma plataforma mobile-first desenvolvida para conectar cidadãos e órgãos públicos na resolução de problemas urbanos em Recife/PE. O sistema permite o registro geolocalizado de ocorrências (como buracos e falta de iluminação) com upload de fotos, comentários e acompanhamento de status em tempo real. Desenvolvido como projeto prático para a disciplina de Programação Front-end do curso de Sistemas para Internet da Universidade Católica de Pernambuco.",
+        imageUrl: "/alertaurbano.png", // Nome da logo que usamos na Splash Screen
+        technologies: [
+            "Next.js 16", 
+            "TypeScript", 
+            "Tailwind CSS v4", 
+            "Shadcn/ui", 
+            "React Leaflet", 
+            "Java Spring Boot", 
+            "PostgreSQL",
+            "Docker"
+        ],
+        githubUrl: "https://github.com/dayvm/alerta-urbano-front",
+        demoUrl: "https://alerta-urbano-unicap.vercel.app/",
+        type: "Projeto Acadêmico",
+        institution: "Universidade Católica de Pernambuco"
     },
 ]

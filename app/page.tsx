@@ -27,7 +27,7 @@ import { PROJECTS } from "@/lib/projects";
 import Autoplay from "embla-carousel-autoplay"
 import { useRef } from "react";
 import { ProjectTypeBadge } from "@/components/project-type-badge";
-
+import Image from "next/image";
 
 export default function Home() {
   const autoplayPlugin = useRef(
@@ -60,7 +60,7 @@ export default function Home() {
       <section className="py-12">
         <h2 className="mb-2 text-center text-2xl font-bold">
           <Link href="/projetos">
-           Projetos
+            Projetos
           </Link>
         </h2>
         <p className="mb-6 text-center text-sm text-muted-foreground">
@@ -82,24 +82,35 @@ export default function Home() {
             {PROJECTS.map((project) => (
               <CarouselItem key={project.slug}>
                 <div className="p-1">
-                  {/* Card: O container de cada projeto */}
-                  <Card key={project.slug} className="relative overflow-hidden">
+                  {/* 1. Altura fixa (h-[500px]) e flex-col para organizar o conteúdo */}
+                  <Card className="relative h-[500px] flex flex-col overflow-hidden">
+
                     <ProjectTypeBadge
                       type={project.type}
-                      className="absolute right-4 top-4"
+                      className="absolute right-4 top-4 z-10"
                     />
-                    <CardHeader>
-                      {/* Você vai trocar "Geradocs" pelo nome do seu projeto */}
-                      <CardTitle>{project.title}</CardTitle>
-                      <CardDescription>
+
+                    {/* 2. flex-none garante que o header use apenas o espaço que precisa */}
+                    <CardHeader className="flex-none">
+                      <CardTitle className="line-clamp-1">{project.title}</CardTitle>
+                      <CardDescription className="line-clamp-2">
                         {project.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="flex justify-center">
-                      <Link href={`/projetos/${project.slug}`}>
-                        <img
+
+                    {/* 3. flex-1 faz este container "esticar" para ocupar o resto do card */}
+                    <CardContent className="flex-1 min-h-0 p-4 pt-0">
+                      <Link
+                        href={`/projetos/${project.slug}`}
+                        className="relative block h-full w-full overflow-hidden rounded-md border"
+                      >
+                        {/* 4. Usando o componente Image com 'fill' e 'object-cover' 
+                   para a imagem se adaptar perfeitamente ao espaço fixo */}
+                        <Image
                           src={project.imageUrl}
                           alt={project.title}
+                          fill
+                          className="object-cover transition-transform"
                         />
                       </Link>
                     </CardContent>
