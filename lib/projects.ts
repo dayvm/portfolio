@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
         title: "Recursos Humanos Perpart",
         description: "Software de gerenciamento dos recursos humanos da PERPART.",
         longDescription: "O software de RH da PERPART vem para resolver o problema de controle de dados dos funcionários da PERPART. Suas informações antes descentralizadas, agora estão acessíveis a poucos cliques, transformando os processos e trazendo eficiência para a empresa.",
-        imageUrl:"/perpart.jfif",
+        imageUrl:"/perpart.png",
         technologies:["TypeScript", "ORM Prisma", "MySQL", "Swagger", "Docker"],
         type: "Projeto Profissional",
         institution: "PERPART"
