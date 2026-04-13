@@ -13,6 +13,16 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
     {
+        slug: "estacione",
+        title: "Sistema Estacione",
+        description: "Plataforma de controle de acesso de veículos via QR Code",
+        longDescription: "Projetado e desenvolvido para automatizar a gestão inteligente de estacionamentos e emissão de adesivos em lote. A plataforma garante rastreabilidade total e segurança antifraude, contando com hierarquia de permissões (RBAC), auditoria completa e análise de dados operacionais em tempo real.",
+        imageUrl: "/estacione.png",
+        technologies: ["NestJS", "Next.js", "Prisma ORM", "MySQL", "Swagger", "JWT", "Docker"],
+        type: "Projeto Profissional",
+        institution: "PERPART"
+    },
+    {
         slug: "geradocs",
         title: "Geradocs",
         description: "Software de preenchimento fácil de documentos",
